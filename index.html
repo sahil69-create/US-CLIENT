@@ -14,7 +14,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/styles.css">
+  <link rel="stylesheet" href="styles.css">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -43,13 +43,16 @@
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
-      <a href="#contact" class="btn btn-primary btn-small">Get a Free Consultation</a>
+      <div class="header-actions">
+        <button class="btn btn-ghost btn-small theme-toggle" id="themeToggle" aria-label="Toggle theme">Light</button>
+        <a href="#contact" class="btn btn-primary btn-small">Get a Free Consultation</a>
+      </div>
     </div>
   </header>
 
   <section class="hero" id="hero">
     <div class="container hero-inner">
-      <div class="hero-copy">
+      <div class="hero-copy" data-reveal="left">
         <h1>I Build Professional Websites That Help Businesses Grow</h1>
         <p>Hi, I’m Sahil Jangra — a freelance web developer specializing in clean, fast, and mobile-friendly websites for small businesses and startups.</p>
         <div class="hero-actions">
@@ -62,12 +65,15 @@
           <div class="badge">SEO-friendly</div>
         </div>
       </div>
+      <div class="hero-media" data-reveal="right">
+        <img src="https://www.dl.dropboxusercontent.com/scl/fi/pp56ountvqle7lsvrrw6g/sahil.jpg?rlkey=mkcjqfj5hlnelywzs8qja223v&st=mf9sq11m&dl=0" alt="Photo of Sahil Jangra">
+      </div>
     </div>
   </section>
 
   <section class="section" id="about">
     <div class="container">
-      <h2>About Me</h2>
+      <h2 class="section-title" data-reveal="left">About Me</h2>
       <p>I am Sahil Jangra, a freelance website developer focused on helping businesses establish a strong and professional online presence. I build modern, responsive websites that are easy to use, load fast, and convert visitors into customers. I believe in clear communication, honest pricing, meeting deadlines, and delivering quality work — exactly what US clients expect. Comfortable working with US time zones.</p>
     </div>
   </section>
@@ -75,43 +81,43 @@
   <section class="section" id="services">
     <div class="container">
       <div class="section-head">
-        <h2>Services</h2>
+        <h2 data-reveal="left">Services</h2>
         <p>Solutions tailored for small businesses, startups, restaurants, and personal brands.</p>
       </div>
       <div class="grid cards-3">
-        <div class="card">
+        <div class="card" data-reveal="up">
           <h3>Business Websites</h3>
           <p>1–5 page professional websites that showcase your brand and drive inquiries.</p>
         </div>
-        <div class="card">
+        <div class="card" data-reveal="up">
           <h3>Landing Pages</h3>
           <p>Lead and sales-focused pages built for conversions and ad campaigns.</p>
         </div>
-        <div class="card">
+        <div class="card" data-reveal="up">
           <h3>Portfolio Websites</h3>
           <p>Clean, modern portfolios for creators, professionals, and personal brands.</p>
         </div>
-        <div class="card">
+        <div class="card" data-reveal="up">
           <h3>Restaurant & Local Business</h3>
           <p>Menu pages, contact info, maps, and online presence optimized for local customers.</p>
         </div>
-        <div class="card">
+        <div class="card" data-reveal="up">
           <h3>Website Redesign</h3>
           <p>Improve visuals, messaging, UX, speed, and mobile experience.</p>
         </div>
-        <div class="card">
+        <div class="card" data-reveal="up">
           <h3>Mobile-Responsive Design</h3>
           <p>Seamless experience across desktop, tablet, and mobile devices.</p>
         </div>
-        <div class="card">
+        <div class="card" data-reveal="up">
           <h3>Speed Optimization</h3>
           <p>Performance improvements for faster load times and better SEO.</p>
         </div>
-        <div class="card">
+        <div class="card" data-reveal="up">
           <h3>Basic SEO Setup</h3>
           <p>Meta tags, structured content, and search-friendly site structure.</p>
         </div>
-        <div class="card">
+        <div class="card" data-reveal="up">
           <h3>Domain & Hosting Assistance</h3>
           <p>Help with domain selection, setup, and hosting deployment.</p>
         </div>
@@ -121,17 +127,17 @@
 
   <section class="section" id="skills">
     <div class="container">
-      <h2>Skills & Technologies</h2>
+      <h2 data-reveal="left">Skills & Technologies</h2>
       <div class="skills">
-        <span class="chip">HTML5</span>
-        <span class="chip">CSS3</span>
-        <span class="chip">JavaScript</span>
-        <span class="chip">Responsive Web Design</span>
-        <span class="chip">UI/UX Best Practices</span>
-        <span class="chip">Canva</span>
-        <span class="chip">GitHub</span>
-        <span class="chip">Vercel Hosting</span>
-        <span class="chip">Basic SEO Optimization</span>
+        <span class="chip" data-reveal="up">HTML5</span>
+        <span class="chip" data-reveal="up">CSS3</span>
+        <span class="chip" data-reveal="up">JavaScript</span>
+        <span class="chip" data-reveal="up">Responsive Web Design</span>
+        <span class="chip" data-reveal="up">UI/UX Best Practices</span>
+        <span class="chip" data-reveal="up">Canva</span>
+        <span class="chip" data-reveal="up">GitHub</span>
+        <span class="chip" data-reveal="up">Vercel Hosting</span>
+        <span class="chip" data-reveal="up">Basic SEO Optimization</span>
       </div>
     </div>
   </section>
@@ -139,11 +145,11 @@
   <section class="section" id="portfolio">
     <div class="container">
       <div class="section-head">
-        <h2>Portfolio</h2>
+        <h2 data-reveal="left">Portfolio</h2>
         <p>Selected work highlighting clean design, responsiveness, and speed.</p>
       </div>
       <div class="grid cards-2">
-        <div class="card project">
+        <div class="card project" data-reveal="up">
           <div class="project-info">
             <h3>Campus Ka Jaika – Restaurant Website</h3>
             <ul class="list">
@@ -162,29 +168,29 @@
 
   <section class="section" id="why">
     <div class="container">
-      <h2>Why Choose Me</h2>
+      <h2 data-reveal="left">Why Choose Me</h2>
       <div class="grid cards-3">
-        <div class="card">
+        <div class="card" data-reveal="up">
           <h3>Clear Communication</h3>
           <p>Professional, transparent updates and US-friendly collaboration.</p>
         </div>
-        <div class="card">
+        <div class="card" data-reveal="up">
           <h3>Reliable Delivery</h3>
           <p>Deadline commitment with quality-focused execution.</p>
         </div>
-        <div class="card">
+        <div class="card" data-reveal="up">
           <h3>Affordable Pricing</h3>
           <p>Startup-friendly rates without compromising on quality.</p>
         </div>
-        <div class="card">
+        <div class="card" data-reveal="up">
           <h3>Client-First Mindset</h3>
           <p>Solutions aligned with your goals and business outcomes.</p>
         </div>
-        <div class="card">
+        <div class="card" data-reveal="up">
           <h3>Post-Delivery Support</h3>
           <p>Assistance and small updates after launch.</p>
         </div>
-        <div class="card">
+        <div class="card" data-reveal="up">
           <h3>Satisfaction Guarantee</h3>
           <p>Revisions to ensure the final result meets expectations.</p>
         </div>
@@ -194,19 +200,19 @@
 
   <section class="section" id="pricing">
     <div class="container">
-      <h2>Pricing</h2>
+      <h2 data-reveal="left">Pricing</h2>
       <div class="grid cards-3">
-        <div class="card price">
+        <div class="card price" data-reveal="up">
           <h3>Basic Website</h3>
           <p class="price-value">$80 – $150</p>
           <p>Clean single-page or small multi-section site.</p>
         </div>
-        <div class="card price">
+        <div class="card price" data-reveal="up">
           <h3>Business Website</h3>
           <p class="price-value">$150 – $300</p>
           <p>1–5 pages with conversion-focused content.</p>
         </div>
-        <div class="card price">
+        <div class="card price" data-reveal="up">
           <h3>Landing Page</h3>
           <p class="price-value">$60 – $120</p>
           <p>Lead or sales-focused campaign page.</p>
@@ -216,10 +222,10 @@
     </div>
   </section>
 
-  <section class="section" id="contact" data-email="sahiljangra.web@gmail.com">
+  <section class="section" id="contact" data-email="sahiljangra.web@gmail.com" data-gs-endpoint="https://script.google.com/macros/s/AKfycbw9SVtDkGrvmQpBvBg8KreaKQYg4lFLSZgrFPGFJhBu8hDkEONeh6gMK6YNcrHKeRRr/exec">
     <div class="container">
       <div class="section-head">
-        <h2>Let’s Build Your Website</h2>
+        <h2 data-reveal="left">Let’s Build Your Website</h2>
         <p>Send a quick message and I’ll respond within 24 hours.</p>
       </div>
       <form class="contact-form" id="contactForm">
@@ -230,6 +236,53 @@
         <div class="form-row">
           <label for="email">Email</label>
           <input id="email" name="email" type="email" placeholder="you@company.com" required>
+        </div>
+        <div class="form-row">
+          <label for="phone">Phone</label>
+          <input id="phone" name="phone" type="tel" placeholder="+1 555 123 4567" required>
+        </div>
+        <div class="form-row">
+          <label for="country">Country</label>
+          <select id="country" name="country" required>
+            <option value="">Select your country</option>
+            <option>United States</option>
+            <option>Canada</option>
+            <option>United Kingdom</option>
+            <option>Australia</option>
+            <option>India</option>
+            <option>Germany</option>
+            <option>Netherlands</option>
+            <option>Singapore</option>
+            <option>United Arab Emirates</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label for="budget">Budget</label>
+          <select id="budget" name="budget" required>
+            <option value="">Select a range</option>
+            <option>$60 – $120</option>
+            <option>$80 – $150</option>
+            <option>$150 – $300</option>
+            <option>$300 – $600</option>
+            <option>$600 – $1,200</option>
+            <option>$1,200+</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label for="topic">Project Topic</label>
+          <select id="topic" name="topic" required>
+            <option value="">Select a topic</option>
+            <option>Business Website</option>
+            <option>Landing Page</option>
+            <option>Portfolio Website</option>
+            <option>Restaurant & Local Business</option>
+            <option>Website Redesign</option>
+            <option>Mobile-Responsive Design</option>
+            <option>Speed Optimization</option>
+            <option>Basic SEO Setup</option>
+            <option>Domain & Hosting Assistance</option>
+          </select>
         </div>
         <div class="form-row">
           <label for="message">Message</label>
@@ -258,6 +311,6 @@
     </div>
   </footer>
 
-  <script src="Javascripts/script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
