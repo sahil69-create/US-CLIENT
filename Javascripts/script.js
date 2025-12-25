@@ -17,12 +17,91 @@ if (contactForm) {
     e.preventDefault()
     const name = document.querySelector('#name')?.value?.trim() || ''
     const email = document.querySelector('#email')?.value?.trim() || ''
+    const phone = document.querySelector('#phone')?.value?.trim() || ''
+    const country = document.querySelector('#country')?.value || ''
+    const budget = document.querySelector('#budget')?.value || ''
+    const topic = document.querySelector('#topic')?.value || ''
     const message = document.querySelector('#message')?.value?.trim() || ''
     const container = document.querySelector('#contact')
     const to = container?.getAttribute('data-email') || ''
+    const gs = container?.getAttribute('data-gs-endpoint') || ''
     if (!to) return
+    const payload = {
+      name, email, phone, country, budget, topic, message,
+      source: 'portfolio'
+    }
     const subject = encodeURIComponent('Project Inquiry')
-    const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`)
-    window.location.href = `mailto:${to}?subject=${subject}&body=${body}`
+    const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nCountry: ${country}\nBudget: ${budget}\nTopic: ${topic}\n\n${message}`)
+    const fallback = () => {
+      window.location.href = `mailto:${to}?subject=${subject}&body=${body}`
+    }
+    if (gs) {
+      fetch(gs, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      }).then(() => {
+        contactForm.reset()
+        alert('Thanks! Your message has been sent.')
+      }).catch(() => {
+        fallback()
+      })
+    } else {
+      fallback()
+    }
   })
 }
+
+const htmlEl = document.documentElement
+const themeToggle = document.querySelector('#themeToggle')
+const applyThemeLabel = () => {
+  if (!themeToggle) return
+  const t = htmlEl.getAttribute('data-theme') || 'light'
+  themeToggle.textContent = t === 'dark' ? 'Dark' : 'Light'
+}
+const savedTheme = localStorage.getItem('theme')
+if (savedTheme) {
+  htmlEl.setAttribute('data-theme', savedTheme)
+  applyThemeLabel()
+}
+if (themeToggle) {
+  themeToggle.addEventListener('click', () => {
+    const current = htmlEl.getAttribute('data-theme') || 'light'
+    const next = current === 'light' ? 'dark' : 'light'
+    htmlEl.setAttribute('data-theme', next)
+    localStorage.setItem('theme', next)
+    applyThemeLabel()
+  })
+}
+
+const revealSelectors = [
+  '[data-reveal]',
+  '.section-head',
+  '.card',
+  '.chip',
+  '.footer-inner'
+]
+const revealEls = document.querySelectorAll(revealSelectors.join(','))
+const io = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('show')
+    }
+  })
+}, { threshold: 0.12 })
+const parentBuckets = new Map()
+revealEls.forEach((el) => {
+  el.classList.add('reveal')
+  const parent = el.parentElement
+  if (parent) {
+    const list = parentBuckets.get(parent) || []
+    list.push(el)
+    parentBuckets.set(parent, list)
+  }
+  io.observe(el)
+})
+parentBuckets.forEach((list) => {
+  list.forEach((el, i) => {
+    el.style.transitionDelay = `${Math.min(i * 80, 320)}ms`
+  })
+})
