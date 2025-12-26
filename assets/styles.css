@@ -1,7 +1,7 @@
 :root {
   --bg: #ffffff;
   --text: #111316;
-  --muted: #5b616e;
+  --muted: #264fa7;
   --primary: #0a63ff;
   --primary-600: #0855d6;
   --border: #e6e8ee;
@@ -10,9 +10,9 @@
 
 :root[data-theme="dark"] {
   --bg: #0b0c0f;
-  --text: #e9ecf2;
-  --muted: #aab1c2;
-  --primary: #6da1ff;
+  --text: #0055ff;
+  --muted: #ffffff;
+  --primary: #0014ab;
   --primary-600: #5b89d8;
   --border: #1c212b;
   --card: #12161e;
@@ -23,7 +23,6 @@
 }
 
 html, body {
-  margin: 0;
   padding: 0;
   background: var(--bg);
   color: var(--text);
@@ -42,7 +41,7 @@ html, body {
   position: sticky;
   top: 0;
   width: 100%;
-  background: rgba(255,255,255,0.9);
+  background: rgba(13, 1, 251, 0.062);
   backdrop-filter: saturate(180%) blur(12px);
   border-bottom: 1px solid var(--border);
   z-index: 50;
@@ -57,7 +56,7 @@ html, body {
 
 .brand {
   text-decoration: none;
-  color: var(--text);
+  color: #0055ff;
   font-weight: 700;
   letter-spacing: 0.2px;
 }
@@ -72,7 +71,7 @@ html, body {
 
 .nav-menu a {
   text-decoration: none;
-  color: var(--muted);
+  color: #0055ff;
   font-weight: 500;
 }
 
@@ -85,7 +84,6 @@ html, body {
   height: 36px;
   padding: 0 12px;
   border: 1px solid var(--border);
-  background: var(--bg);
   border-radius: 8px;
   font-weight: 600;
 }
@@ -193,7 +191,7 @@ html, body {
   height: auto;
   border-radius: 18px;
   border: 1px solid var(--border);
-  box-shadow: 0 14px 36px rgba(10,99,255,0.1);
+  box-shadow: 0 14px 36px rgba(10, 100, 255, 0.44);
 }
 
 .badge {
