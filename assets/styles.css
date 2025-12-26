@@ -1,18 +1,8 @@
 :root {
-  --bg: #ffffff;
-  --text: #111316;
-  --muted: #264fa7;
-  --primary: #0a63ff;
-  --primary-600: #0855d6;
-  --border: #e6e8ee;
-  --card: #f7f9fc;
-}
-
-:root[data-theme="dark"] {
   --bg: #0b0c0f;
-  --text: #0055ff;
-  --muted: #ffffff;
-  --primary: #0014ab;
+  --text: #e9ecf2;
+  --muted: #aab1c2;
+  --primary: #6da1ff;
   --primary-600: #5b89d8;
   --border: #1c212b;
   --card: #12161e;
@@ -138,10 +128,6 @@ html, body {
 .btn-ghost:hover {
   background: var(--card);
   border-color: var(--border);
-}
-
-.theme-toggle {
-  margin-right: 10px;
 }
 
 .hero {
