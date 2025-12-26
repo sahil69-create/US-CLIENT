@@ -52,27 +52,7 @@ if (contactForm) {
   })
 }
 
-const htmlEl = document.documentElement
-const themeToggle = document.querySelector('#themeToggle')
-const applyThemeLabel = () => {
-  if (!themeToggle) return
-  const t = htmlEl.getAttribute('data-theme') || 'light'
-  themeToggle.textContent = t === 'dark' ? 'Dark' : 'Light'
-}
-const savedTheme = localStorage.getItem('theme')
-if (savedTheme) {
-  htmlEl.setAttribute('data-theme', savedTheme)
-  applyThemeLabel()
-}
-if (themeToggle) {
-  themeToggle.addEventListener('click', () => {
-    const current = htmlEl.getAttribute('data-theme') || 'light'
-    const next = current === 'light' ? 'dark' : 'light'
-    htmlEl.setAttribute('data-theme', next)
-    localStorage.setItem('theme', next)
-    applyThemeLabel()
-  })
-}
+document.documentElement.setAttribute('data-theme', 'dark')
 
 const revealSelectors = [
   '[data-reveal]',
@@ -102,6 +82,6 @@ revealEls.forEach((el) => {
 })
 parentBuckets.forEach((list) => {
   list.forEach((el, i) => {
-    el.style.transitionDelay = `${Math.min(i * 80, 320)}ms`
+    el.style.transitionDelay = `${Math.min(i * 300, 140)}ms`
   })
 })
